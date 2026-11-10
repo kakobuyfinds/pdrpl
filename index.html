@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>BBDBuy spreadsheet – fynd, storlekar och QC på svenska</title>
+<meta name="description" content="Utforska BBDBuy spreadsheet med svenska råd om sneakers, kläder och accessoarer. Jämför mått, granska QC och planera din beställning före köp.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#243d70">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:title" content="BBDBuy spreadsheet – hitta din stil, granska detaljerna">
+<meta property="og:description" content="En oberoende svensk guide till kategorier, storlekar, QC-bilder och genomtänkta inköp.">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--paper:#f5f2eb;--ink:#202b42;--blue:#243d70;--line:#d4d8e0;--muted:#536078;--lime:#e6f0ad}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:4px}
+a:focus-visible,summary:focus-visible{outline:3px solid #b45d21;outline-offset:5px}
+a:hover{text-decoration:underline}
+header,main,footer{width:min(1180px,calc(100% - 40px));margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid var(--line)}
+.logo{font-weight:800;letter-spacing:-.5px;text-decoration:none;font-size:20px}
+.label{font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:750;color:var(--muted)}
+.categories{padding:22px 0 28px}
+.categories p{margin:0 0 12px}
+.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.category-grid a{background:#fff;padding:10px 12px;font-size:13px;font-weight:650;border:1px solid var(--line);text-decoration:none;border-radius:4px}
+.category-grid a:hover{background:var(--lime)}
+.hero{display:grid;grid-template-columns:1.12fr 1fr;background:var(--blue);color:white;overflow:hidden}
+.hero-copy{padding:clamp(25px,4vw,56px)}
+.hero .label{color:var(--lime)}
+h1{font-size:clamp(40px,5vw,68px);line-height:1.05;letter-spacing:-2.5px;margin:20px 0 24px}
+h1 span{display:block;font-weight:400;font-size:.54em;line-height:1.25;letter-spacing:-1px;margin-top:16px}
+.hero p{max-width:49ch;color:#e1e7f4}
+.button{display:inline-block;background:var(--lime);color:#203051;border:1px solid transparent;border-radius:3px;padding:13px 21px;font-weight:750;text-decoration:none;margin-top:14px}
+.hero figure{background:#fff;margin:0;display:flex;flex-direction:column;justify-content:center}
+.hero img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.hero figcaption{padding:12px 22px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+section{padding:48px 0;border-bottom:1px solid var(--line)}
+h2{font-size:clamp(26px,3vw,38px);line-height:1.2;letter-spacing:-1px;margin:8px 0 22px}
+h3{font-size:19px;line-height:1.35;margin:0 0 12px}
+p{margin:0 0 17px}
+.intro{display:grid;grid-template-columns:1fr 1.1fr;gap:50px}
+.intro aside{border-left:3px solid var(--blue);padding-left:24px}
+.intro aside p:last-child{margin-bottom:0}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.gallery figure{margin:0}
+.gallery .photo{background:white;aspect-ratio:1;display:block;border:1px solid var(--line);overflow:hidden}
+.gallery img{width:100%;height:100%;object-fit:contain}
+.gallery figcaption{padding-top:15px;font-size:14px}
+.gallery strong{display:block;font-size:17px}
+.small{font-size:13px;color:var(--muted)}
+.editorial{display:grid;grid-template-columns:240px 1fr;gap:48px}
+.editorial article+article{border-top:1px solid var(--line);padding-top:26px;margin-top:26px}
+.number{display:block;color:var(--blue);font-size:13px;font-weight:800;letter-spacing:2px;margin-bottom:12px}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;text-align:left;font-size:14px;min-width:580px}
+caption{text-align:left;font-weight:700;margin-bottom:14px}
+th,td{padding:15px;border-bottom:1px solid var(--line);vertical-align:top}
+thead{background:#e7ebf3}
+.checklist{padding:28px;background:var(--lime);margin-top:26px}
+.checklist ul{margin:0;padding-left:22px}
+.faq{display:grid;grid-template-columns:1fr 1.5fr;gap:48px}
+details{padding:19px 0;border-top:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;line-height:1.45}
+details p{margin:15px 0 0;color:var(--muted)}
+.closing{padding:35px;background:var(--blue);color:white;display:flex;justify-content:space-between;gap:30px;align-items:center;margin:44px 0}
+.closing h2{font-size:27px;margin:0 0 8px}
+.closing p{margin:0;max-width:65ch}
+.closing .button{white-space:nowrap;margin:0}
+footer{padding:24px 0 40px;color:var(--muted);font-size:13px}
+footer p{max-width:95ch}
+@media(max-width:850px){
+.category-grid{grid-template-columns:repeat(3,1fr)}
+.hero{grid-template-columns:1fr 1fr}
+.hero-copy{padding:28px}
+h1{font-size:42px}
+.gallery{grid-template-columns:repeat(2,1fr)}
+.editorial{grid-template-columns:180px 1fr;gap:25px}
+.intro,.faq{gap:25px}
+}
+@media(max-width:600px){
+header,main,footer{width:calc(100% - 28px)}
+.top{align-items:flex-start}
+.top .label{font-size:10px;max-width:100px;text-align:right}
+.logo{font-size:17px}
+.category-grid{grid-template-columns:repeat(2,1fr)}
+.hero,.intro,.editorial,.faq{grid-template-columns:1fr}
+.hero figure{max-height:none}
+.hero img{max-height:320px}
+.hero-copy{padding:30px 24px}
+h1{font-size:45px}
+section{padding:34px 0}
+.gallery{gap:14px}
+.gallery figcaption{font-size:13px}
+.closing{display:block;padding:25px}
+.closing .button{margin-top:20px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebPage",
+      "@id":"#webpage",
+      "name":"BBDBuy spreadsheet – fynd, storlekar och QC på svenska",
+      "description":"En oberoende svensk guide till kategorier, storlekar, QC-bilder och genomtänkta inköp.",
+      "inLanguage":"sv",
+      "mainEntity":{"@id":"#guide"}
+    },
+    {
+      "@type":"Article",
+      "@id":"#guide",
+      "headline":"BBDBuy inköpsguide: från inspiration till ett tydligt underlag",
+      "inLanguage":"sv",
+      "articleSection":["Storleksguide","QC-guide","Frakt och total kostnad"],
+      "description":"Praktiska råd om att jämföra produktmått, granska kontrollbilder och kontrollera aktuell totalkostnad."
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"#faq",
+      "inLanguage":"sv",
+      "mainEntity":[
+        {
+          "@type":"Question",
+          "name":"Vad är en BBDBuy spreadsheet?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Det är en sammanställning av produktreferenser som hjälper dig att hitta och jämföra varor. Uppgifter i en sådan lista behöver kontrolleras mot den aktuella produktannonsen."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Vart leder länkarna på den här sidan?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Kategorilänkarna öppnar motsvarande kategori på hipobuyfind.com. Övriga länkar leder till www.hipobuyfind.com. Sidan är en oberoende guide och ingen BBDBuy-kassa."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Hur väljer jag storlek när jag handlar från Sverige?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Jämför säljarens mått i centimeter med ett plagg eller en sko som passar dig. Kontrollera hur måtten har tagits; samma bokstavsstorlek eller EU-nummer kan passa olika mellan modeller."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Bevisar QC-bilder att en produkt är äkta?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Nej. QC-bilder kan visa synliga detaljer, färg och skick men styrker inte ensamma äkthet, materialinnehåll eller hållbarhet. Begär dokumentation om ursprung och äkthet är avgörande."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Kan jag se den slutliga kostnaden här?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Nej. Kontrollera varupris, betalningsavgifter, växelkurs, frakt och eventuella importkostnader för din leveransadress före betalning. Den här sidan lämnar inga pris- eller leveranslöften."
+          }
+        },
+        {
+          "@type":"Question",
+          "name":"Går det att beställa via BBDBuy just nu?",
+          "acceptedAnswer":{
+            "@type":"Answer",
+            "text":"Den här sidan bekräftar inte BBDBuys aktuella driftstatus. Kontrollera att tjänsten tar emot beställningar och läs gällande betalnings-, retur- och leveransvillkor innan du betalar."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<!--
+Research note: search results informed topic selection only.
+A live Bing first-page ranking of ten distinct websites could not be verified.
+No competitor prices, reviews or service-status claims are reproduced.
+Set a self-referencing canonical only after the final deployment URL is known.
+-->
+<link rel="canonical" href="https://kakobuyfinds.github.io/pdrpl/">
+</head>
+<body>
+<header>
+  <div class="top">
+    <a class="logo" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+    <span class="label">Stilarkivet / Svensk köpguide</span>
+  </div>
+
+  <nav class="categories" aria-label="Produktkategorier">
+    <p class="label">Börja med en kategori</p>
+    <div class="category-grid">
+      <a href="https://hipobuyfind.com/category-911-Shoes.html">Shoes · Skor ↗</a>
+      <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies/Sweaters ↗</a>
+      <a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts ↗</a>
+      <a href="https://hipobuyfind.com/category-914-Jackets.html">Jackets · Jackor ↗</a>
+      <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pants/Shorts ↗</a>
+      <a href="https://hipobuyfind.com/category-916-Headwear.html">Headwear · Huvudbonader ↗</a>
+      <a href="https://hipobuyfind.com/category-917-Sets.html">Sets · Matchande set ↗</a>
+      <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underwear/underpants ↗</a>
+      <a href="https://hipobuyfind.com/category-919-Jersey.html">Jersey · Matchtröjor ↗</a>
+      <a href="https://hipobuyfind.com/category-920-Accessories.html">Accessories ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="label">Färre gissningar. Bättre underlag.</div>
+      <h1>BBDBuy spreadsheet<span>Hitta din stil.<br>Granska detaljerna.</span></h1>
+      <p>En svensk vägledning för dig som letar efter sneakers, kläder och accessoarer. Börja med kategorin, jämför alternativen och kontrollera den faktiska annonsen före köp.</p>
+      <a class="button" href="https://www.hipobuyfind.com">Utforska på HipobuyFind ↗</a>
+      <p class="small" style="color:#d7e2f5;margin-top:20px">Oberoende innehåll. Ingen officiell koppling till BBDBuy eller de avbildade varumärkena.</p>
+    </div>
+    <figure>
+      <img src="https://www.tike.gr/files/images/products/media/CW2/CW2288-111/images/CW2288-111.jpg.webp" alt="Vit Nike Air Force 1 med vit Swoosh och kraftig vit sula, sedd från sidan" width="600" height="600" fetchpriority="high" decoding="async">
+      <figcaption>Nike Air Force 1 · Bildreferens för form och proportioner, inte en produktannons.</figcaption>
+    </figure>
+  </div>
+
+  <section class="intro">
+    <div>
+      <p class="label">Vad du faktiskt får hjälp med</p>
+      <h2>Från en bild till en genomtänkt kortlista.</h2>
+      <p>En BBDBuy spreadsheet är en samling produktreferenser. Den kan ge en bra startpunkt, men ett snyggt foto berättar inte allt om storlek, material eller säljvillkor.</p>
+    </div>
+    <aside>
+      <h3>BBDBuy finds med sammanhang</h3>
+      <p>Använd kategorierna för att avgränsa sökningen. Spara produktnamn, ursprungslänk, färgval och mått för varje alternativ. Då blir en jämförelse av sneakers eller streetwear lättare att följa.</p>
+      <p>Länkarna här öppnar HipobuyFind. Kontrollera själv om den aktuella produktlänken fungerar med den inköpstjänst du tänker använda.</p>
+    </aside>
+  </section>
+
+  <section>
+    <p class="label">Visuella referenser</p>
+    <h2>Fyra detaljer att titta närmare på</h2>
+    <p>Bilderna visar stilreferenser från externa bildkällor. De innebär inte att samma vara finns i den länkade katalogen eller att en säljare är auktoriserad.</p>
+    <div class="gallery">
+      <figure>
+        <a class="photo" href="https://www.hipobuyfind.com" aria-label="Utforska kläder på HipobuyFind">
+          <img src="https://cdna.lystit.com/photos/cettire/4faaa82c/dior-White-Logo-Print-T-shirt.jpeg" alt="Vit Dior T-shirt med svart Dior-text över bröstet" width="360" height="360" loading="lazy" decoding="async">
+        </a>
+        <figcaption><strong>Dior / Silhuett</strong>Jämför axelbredd, bröstvidd och plagglängd för en T-shirt med rätt passform.</figcaption>
+      </figure>
+      <figure>
+        <a class="photo" href="https://www.hipobuyfind.com" aria-label="Utforska huvudbonader på HipobuyFind">
+          <img src="https://brandol.jp/upload/save_image/gu-200035-kqwbg-9791-l_1.jpg" alt="Beige Gucci basebollkeps med GG-mönster och mörk skärm" width="360" height="360" loading="lazy" decoding="async">
+        </a>
+        <figcaption><strong>Gucci / Proportion</strong>Kontrollera huvudomkrets, skärmens form och hur kepsens justering fungerar.</figcaption>
+      </figure>
+      <figure>
+        <a class="photo" href="https://www.hipobuyfind.com" aria-label="Utforska smycken på HipobuyFind">
+          <img src="https://it.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-collana-monogram-row--M02254_PM2_Front%20view.jpg?wid=480&amp;hei=480" alt="Louis Vuitton Monogram Row-halsband med kedja och LV-hänge" width="360" height="360" loading="lazy" decoding="async">
+        </a>
+        <figcaption><strong>Louis Vuitton / Skala</strong>Läs kedjelängd och hängets mått. En närbild gör små smycken svåra att storleksbedöma.</figcaption>
+      </figure>
+      <figure>
+        <a class="photo" href="https://www.hipobuyfind.com" aria-label="Utforska accessoarer på HipobuyFind">
+          <img src="https://assets.hermes.com/is/image/hermesproduct/bracciale-tonight--500041FJ0X-worn-1-0-0-1000-1000_g.jpg" alt="Orange Hermès Tonight-armband med silverfärgat H-spänne på en handled" width="360" height="360" loading="lazy" decoding="async">
+        </a>
+        <figcaption><strong>Hermès / Funktion</strong>Granska armbandets omkrets, låsets konstruktion och materialbeskrivningen.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="editorial">
+    <div>
+      <p class="label">Fördjupning</p>
+      <h2>BBDBuy inköpsguide</h2>
+      <p class="small">Tre korta artiklar att använda när du bygger din egen produktlista.</p>
+    </div>
+    <div>
+      <article>
+        <span class="number">01 / PASSFORM</span>
+        <h3>BBDBuy storleksguide: börja med centimeter</h3>
+        <p>För skor: mät båda fötterna och jämför den längre fotens mått med säljarens modelltabell. Skilj på fotlängd, innersulans längd och rekommenderad storlek. En EU-storlek är bara en utgångspunkt.</p>
+        <p>För en hoodie eller sweatshirt: mät ett plagg som redan sitter bra, plant på ett bord. Jämför bröstvidd, ärmlängd och rygglängd med samma mätmetod. För jackor behöver du även utrymme för lager under; för byxor och shorts är midja, innerben och lårvidd användbara.</p>
+      </article>
+      <article>
+        <span class="number">02 / BILDER</span>
+        <h3>BBDBuy QC-guide: jämför det som går att se</h3>
+        <p>QC betyder kvalitetskontroll. Kontrollbilder kan hjälpa dig att upptäcka synliga avvikelser före vidare leverans, om din valda tjänst erbjuder dem. Be om fram-, bak- och detaljbilder när underlaget är otydligt.</p>
+        <p>Vid granskning av sneakers är sulkant, sömmar, färgval och storleksetikett relevanta. För kläder: titta på tryckets placering, sömmarnas avslut och eventuella fläckar. Belysning påverkar färgåtergivningen. Bilder kan inte ensamma bekräfta äkthet eller materialkvalitet.</p>
+      </article>
+      <article>
+        <span class="number">03 / PLANERING</span>
+        <h3>Räkna på helheten innan du beställer</h3>
+        <p>En inköpslista blir mer användbar när varje rad har separat varupris, variant, uppskattad vikt och en notering om returvillkor. Jämför betalningsavgifter, valutaväxling och aktuell frakt utan att utgå från gamla skärmbilder.</p>
+        <p>För leverans till Sverige behöver du kontrollera vilka importkostnader som gäller för din beställning och vad fraktalternativet faktiskt omfattar. Paketets vikt och mått kan påverka offerten. Kontrollera också ordermottagning och gällande tjänstevillkor direkt hos den valda aktören.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">Spara rätt uppgifter</p>
+    <h2>En användbar lista, kategori för kategori</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>Jämförelseunderlag före ett köp</caption>
+        <thead>
+          <tr><th scope="col">Kategori</th><th scope="col">Anteckna</th><th scope="col">Kontrollera extra</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Sneakers och skor</th><td>Modell, färg, fotlängd, storlekstabell</td><td>Hur storleksmåttet definieras och vilka bilder som visar rätt variant.</td></tr>
+          <tr><th scope="row">Hoodies, T-shirts och jackor</th><td>Bröstvidd, längd, ärm, materialuppgift</td><td>Om måtten gäller plagget plant eller kroppsmått.</td></tr>
+          <tr><th scope="row">Byxor, shorts och set</th><td>Midja, innerben, delarnas storlek</td><td>Om överdel och underdel kan väljas separat.</td></tr>
+          <tr><th scope="row">Kepsar och huvudbonader</th><td>Omkrets, djup, justering</td><td>Fast storlek eller justerbart spänne.</td></tr>
+          <tr><th scope="row">Underkläder och matchtröjor</th><td>Mått, material, modellversion</td><td>Hygienvillkor och om tröjan är en spelar- eller supportermodell.</td></tr>
+          <tr><th scope="row">Smycken och accessoarer</th><td>Längd, omkrets, lås, angivet material</td><td>Materialdokumentation om du har kontaktallergi.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="checklist">
+      <h3>Innan kortlistan blir en beställning</h3>
+      <ul>
+        <li>Öppna produktannonsen igen och kontrollera vald variant.</li>
+        <li>Spara säljarens mått och villkor tillsammans med produktlänken.</li>
+        <li>Bekräfta total kostnad och hur en reklamation hanteras.</li>
+        <li>Begär bättre bilder eller fler uppgifter när något är oklart.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div>
+      <p class="label">Direkta svar</p>
+      <h2>Vanliga frågor om BBDBuy spreadsheet</h2>
+      <p>Praktiska svar för svenska besökare som vill gå från inspiration till ett kontrollerat köpunderlag.</p>
+    </div>
+    <div>
+      <details open>
+        <summary>Vad är en BBDBuy spreadsheet?</summary>
+        <p>Det är en sammanställning av produktreferenser som hjälper dig att hitta och jämföra varor. Uppgifter i en sådan lista behöver kontrolleras mot den aktuella produktannonsen.</p>
+      </details>
+      <details>
+        <summary>Vart leder länkarna på den här sidan?</summary>
+        <p>Kategorilänkarna öppnar motsvarande kategori på hipobuyfind.com. Övriga länkar leder till www.hipobuyfind.com. Sidan är en oberoende guide och ingen BBDBuy-kassa.</p>
+      </details>
+      <details>
+        <summary>Hur väljer jag storlek när jag handlar från Sverige?</summary>
+        <p>Jämför säljarens mått i centimeter med ett plagg eller en sko som passar dig. Kontrollera hur måtten har tagits; samma bokstavsstorlek eller EU-nummer kan passa olika mellan modeller.</p>
+      </details>
+      <details>
+        <summary>Bevisar QC-bilder att en produkt är äkta?</summary>
+        <p>Nej. QC-bilder kan visa synliga detaljer, färg och skick men styrker inte ensamma äkthet, materialinnehåll eller hållbarhet. Begär dokumentation om ursprung och äkthet är avgörande.</p>
+      </details>
+      <details>
+        <summary>Kan jag se den slutliga kostnaden här?</summary>
+        <p>Nej. Kontrollera varupris, betalningsavgifter, växelkurs, frakt och eventuella importkostnader för din leveransadress före betalning. Den här sidan lämnar inga pris- eller leveranslöften.</p>
+      </details>
+      <details>
+        <summary>Går det att beställa via BBDBuy just nu?</summary>
+        <p>Den här sidan bekräftar inte BBDBuys aktuella driftstatus. Kontrollera att tjänsten tar emot beställningar och läs gällande betalnings-, retur- och leveransvillkor innan du betalar.</p>
+      </details>
+    </div>
+  </section>
+
+  <div class="closing">
+    <div>
+      <h2>Välj kategori. Bygg din egen kortlista.</h2>
+      <p>Ta med mått, bildreferenser och frågor när du fortsätter till katalogen.</p>
+    </div>
+    <a class="button" href="https://www.hipobuyfind.com">Öppna HipobuyFind ↗</a>
+  </div>
+</main>
+
+<footer>
+  <p><a href="https://www.hipobuyfind.com">hipobuyfind.com</a> · Svensk redaktionell vägledning om BBDBuy spreadsheet.</p>
+  <p>Varumärken nämns för identifiering och stiljämförelse. Bildreferenser är inte erbjudanden, äkthetsintyg eller bevis på tillgänglighet. Ingen officiell koppling till BBDBuy, Nike, Dior, Gucci, Louis Vuitton eller Hermès anges.</p>
+</footer>
+</body>
+</html>
